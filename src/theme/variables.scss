@@ -1,0 +1,46 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+
+@import "ionic.globals";
+
+
+$colors: (
+  primary:    #6495ed,
+  secondary:  #435d8c,
+  danger:     #f53d3d,
+  light:      #ffffff,
+  dark:       #222
+);
+
+// Toolbar color
+$toolbar-md-background: color($colors, secondary);
+
+// Bottom Tabs
+$tabs-md-background: color($colors, secondary);
+
+// Tabs activas
+$tabs-md-tab-color-active: color($colors, light);
+$tabs-md-tab-color: color($colors, light);
+$tabs-md-tab-text-color: color($colors, light);
+
+
+$list-md-background-color: color($colors, light);
+$list-md-text-color: color($colors, secondary);
+
+$tabs-md-tab-icon-color: color($colors, light);
+
+@import "ionic.theme.default";
+@import "ionic.ionicons";
+@import "roboto";
+@import "noto-sans";
