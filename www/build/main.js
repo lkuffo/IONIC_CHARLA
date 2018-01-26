@@ -67,11 +67,11 @@ webpackEmptyAsyncContext.id = 111;
 
 var map = {
 	"../pages/details/details.module": [
-		276,
+		277,
 		1
 	],
 	"../pages/settings/settings.module": [
-		277,
+		278,
 		0
 	]
 };
@@ -149,13 +149,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+/* Importamos el provider */
 var AboutPage = (function () {
+    /* Inyectamos el provider */
     function AboutPage(navCtrl) {
         this.navCtrl = navCtrl;
     }
+    /* Existen metodos predeterminados en IONIC para ejecutar metodos
+    antes, durante o despues de entrar a una vista
+     */
+    AboutPage.prototype.ionViewWillEnter = function () {
+        // Llenamos location antes de que se cargue la vista
+        this.location = {
+            city: 'Miami',
+            state: 'FL'
+        };
+        //
+    };
     AboutPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-about',template:/*ion-inline-start:"C:\Users\Leonardo\Desktop\taller\myapp\src\pages\about\about.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      About\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col width-100>\n        <ion-item>\n          <strong> App Name: </strong> Leonardo\n        </ion-item>\n        <ion-item>\n          <strong> App Name: </strong> Leonardo\n        </ion-item>\n        <ion-item>\n          <strong> App Name: </strong> Leonardo\n        </ion-item>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Leonardo\Desktop\taller\myapp\src\pages\about\about.html"*/
+            selector: 'page-about',template:/*ion-inline-start:"C:\Users\Leonardo\Desktop\taller\myapp\src\pages\about\about.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      About\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <h1> Holi  </h1>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Leonardo\Desktop\taller\myapp\src\pages\about\about.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
     ], AboutPage);
@@ -189,13 +202,98 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var HomePage = (function () {
     function HomePage(navCtrl) {
         this.navCtrl = navCtrl;
-        this.items = [];
-        for (var i = 0; i < 10; i++) {
-            this.items.push({
-                text: "Contacto Nuevo: " + i,
-                id: i
-            });
-        }
+        this.items = [
+            {
+                "name": "Leonardo",
+                "last": "Kuffo",
+                "edad": "22",
+                "nacimiento": "19/20/1196",
+                "telefono": "0992356893",
+                "carrera": "Ciencias Computacionales",
+                "src": "../../assets/imgs/img1.jpg"
+            },
+            {
+                "name": "Galo",
+                "last": "Castillo",
+                "edad": "21",
+                "nacimiento": "19/20/1995",
+                "telefono": "0992359090",
+                "carrera": "Ciencias Computacionales",
+                "src": "../../assets/imgs/img2.jpg"
+            },
+            {
+                "name": "Jorge",
+                "last": "Cedeno",
+                "edad": "23",
+                "nacimiento": "19/12/1994",
+                "telefono": "0872356893",
+                "carrera": "Ciencias Computacionales",
+                "src": "../../assets/imgs/img3.jpg"
+            },
+            {
+                "name": "Fabricio",
+                "last": "Layedra",
+                "edad": "15",
+                "nacimiento": "10/10/2001",
+                "telefono": "0992356893",
+                "carrera": "Ciencias Computacionales",
+                "src": "../../assets/imgs/img4.jpg"
+            },
+            {
+                "name": "Rodrigo",
+                "last": "Castro",
+                "edad": "25",
+                "nacimiento": "12/10/1994",
+                "telefono": "09929426393",
+                "carrera": "Telematica",
+                "src": "../../assets/imgs/img5.jpg"
+            },
+            {
+                "name": "Piero",
+                "last": "Ulloa",
+                "edad": "19",
+                "nacimiento": "12/10/1997",
+                "telefono": "09928392393",
+                "carrera": "Turismo",
+                "src": "../../assets/imgs/img6.jpg"
+            },
+            {
+                "name": "Xavier",
+                "last": "Rivero",
+                "edad": "22",
+                "nacimiento": "8/10/1997",
+                "telefono": "09928399134",
+                "carrera": "Licenciatura en Redes",
+                "src": "../../assets/imgs/img7.jpg"
+            },
+            {
+                "name": "Marlon",
+                "last": "Segarra",
+                "edad": "21",
+                "nacimiento": "12/10/1997",
+                "telefono": "09928392393",
+                "carrera": "Telematica",
+                "src": "../../assets/imgs/img8.jpg"
+            },
+            {
+                "name": "Pablo",
+                "last": "Estrada",
+                "edad": "20",
+                "nacimiento": "12/10/1995",
+                "telefono": "0998392393",
+                "carrera": "Economia",
+                "src": "../../assets/imgs/img9.jpg"
+            },
+            {
+                "name": "Jonathan",
+                "last": "Gorotiza",
+                "edad": "21",
+                "nacimiento": "12/10/1997",
+                "telefono": "0998122393",
+                "carrera": "Automatizacion",
+                "src": "../../assets/imgs/img10.jpg"
+            }
+        ];
     }
     HomePage.prototype.itemSelected = function (item) {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__details_details__["a" /* DetailsPage */], {
@@ -204,11 +302,12 @@ var HomePage = (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Leonardo\Desktop\taller\myapp\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="home">\n  <ion-list inset>\n  <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">\n    {{ item.text }}\n    <ion-avatar item-start>\n      <img src="../../assets/imgs/logo.png">\n    </ion-avatar>\n    <h2>Cher</h2>\n    <p>Ugh. As if.</p>\n  </button>\n</ion-list>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Leonardo\Desktop\taller\myapp\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Leonardo\Desktop\taller\myapp\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="home">\n  <ion-list inset>\n  <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">\n    {{ item.name }} {{item.last}}\n    <ion-avatar item-start>\n      <img src="{{item.src}}">\n    </ion-avatar>\n    <h2>Cher</h2>\n    <p>Ugh. As if.</p>\n  </button>\n</ion-list>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Leonardo\Desktop\taller\myapp\src\pages\home\home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object])
     ], HomePage);
     return HomePage;
+    var _a;
 }());
 
 //# sourceMappingURL=home.js.map
@@ -235,23 +334,25 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(266);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_about_about__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_contact_contact__ = __webpack_require__(275);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(198);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_tabs_tabs__ = __webpack_require__(196);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_settings_settings__ = __webpack_require__(100);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_details_details__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_status_bar__ = __webpack_require__(192);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_splash_screen__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(275);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_about_about__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_contact_contact__ = __webpack_require__(276);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_home__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_tabs_tabs__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_settings_settings__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_details_details__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_status_bar__ = __webpack_require__(192);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_splash_screen__ = __webpack_require__(195);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -271,15 +372,16 @@ var AppModule = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_4__pages_about_about__["a" /* AboutPage */],
-                __WEBPACK_IMPORTED_MODULE_5__pages_contact_contact__["a" /* ContactPage */],
-                __WEBPACK_IMPORTED_MODULE_6__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_7__pages_tabs_tabs__["a" /* TabsPage */],
-                __WEBPACK_IMPORTED_MODULE_8__pages_settings_settings__["a" /* SettingsPage */],
-                __WEBPACK_IMPORTED_MODULE_9__pages_details_details__["a" /* DetailsPage */]
+                __WEBPACK_IMPORTED_MODULE_5__pages_about_about__["a" /* AboutPage */],
+                __WEBPACK_IMPORTED_MODULE_6__pages_contact_contact__["a" /* ContactPage */],
+                __WEBPACK_IMPORTED_MODULE_7__pages_home_home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_8__pages_tabs_tabs__["a" /* TabsPage */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_settings_settings__["a" /* SettingsPage */],
+                __WEBPACK_IMPORTED_MODULE_10__pages_details_details__["a" /* DetailsPage */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_http__["a" /* HttpModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/details/details.module#DetailsPageModule', name: 'DetailsPage', segment: 'details', priority: 'low', defaultHistory: [] },
@@ -290,16 +392,16 @@ var AppModule = (function () {
             bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* IonicApp */]],
             entryComponents: [
                 __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_4__pages_about_about__["a" /* AboutPage */],
-                __WEBPACK_IMPORTED_MODULE_5__pages_contact_contact__["a" /* ContactPage */],
-                __WEBPACK_IMPORTED_MODULE_6__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_7__pages_tabs_tabs__["a" /* TabsPage */],
-                __WEBPACK_IMPORTED_MODULE_8__pages_settings_settings__["a" /* SettingsPage */],
-                __WEBPACK_IMPORTED_MODULE_9__pages_details_details__["a" /* DetailsPage */]
+                __WEBPACK_IMPORTED_MODULE_5__pages_about_about__["a" /* AboutPage */],
+                __WEBPACK_IMPORTED_MODULE_6__pages_contact_contact__["a" /* ContactPage */],
+                __WEBPACK_IMPORTED_MODULE_7__pages_home_home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_8__pages_tabs_tabs__["a" /* TabsPage */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_settings_settings__["a" /* SettingsPage */],
+                __WEBPACK_IMPORTED_MODULE_10__pages_details_details__["a" /* DetailsPage */]
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_10__ionic_native_status_bar__["a" /* StatusBar */],
-                __WEBPACK_IMPORTED_MODULE_11__ionic_native_splash_screen__["a" /* SplashScreen */],
+                __WEBPACK_IMPORTED_MODULE_11__ionic_native_status_bar__["a" /* StatusBar */],
+                __WEBPACK_IMPORTED_MODULE_12__ionic_native_splash_screen__["a" /* SplashScreen */],
                 { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] }
             ]
         })
@@ -357,7 +459,7 @@ var MyApp = (function () {
 
 /***/ }),
 
-/***/ 275:
+/***/ 276:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
